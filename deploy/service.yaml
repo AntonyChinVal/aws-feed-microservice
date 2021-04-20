@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: feed-api-app
+  name: feed-api-app-svc
+  namespace: default
+  selfLink: /api/v1/namespaces/default/services/feed-api-app-svc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: feed-api-app
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
